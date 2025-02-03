@@ -107,8 +107,7 @@
                         <v-switch color="error" v-model="featureInfoEnabled" label="Enable Feature Info" @change="toggleFeatureInfo"></v-switch>
                     </v-card-text>
                 </v-card>
-                <v-divider :thickness="3"></v-divider>
-                <v-img src="../assets/rightPng/feature_tool.png" style="margin-top: 70px;opacity: 0.8;" contain></v-img>
+                <v-divider :thickness="3"></v-divider>  
             </div>
             <!-- Compare Tool Content -->
             <div v-else-if="activeLeftTab === 'compare'">
@@ -127,7 +126,7 @@
                 </v-card-text>
             </v-card>
                 <v-divider :thickness="3"></v-divider>
-                <v-img src="../assets/rightPng/compare_tool.png" style="margin-top: 80px; opacity: 0.9;" max-height="300" contain></v-img>
+             
             </div>
         </v-navigation-drawer>
     </v-main>

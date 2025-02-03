@@ -18,8 +18,6 @@ export default {
     name: 'NavBarMain',
     data() {
         return {
-            geoDialog: false,
-            gangaLogo: require('@/assets/img/geoganga_logo.png'),
             tabs: [{
                     name: 'Home',
                     route: '/',
@@ -46,8 +44,8 @@ export default {
                     icon: 'mdi-recycle'
                 },
                 {
-                    name: 'About',
-                    route: '/about',
+                    name: 'Gallery',
+                    route: '/gallery',
                     icon: 'mdi-information'
                 },
             ],
