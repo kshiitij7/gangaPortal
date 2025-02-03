@@ -46,7 +46,7 @@ export default {
                 {
                     name: 'Gallery',
                     route: '/gallery',
-                    icon: 'mdi-information'
+                    icon: 'mdi-image-multiple'
                 },
             ],
             

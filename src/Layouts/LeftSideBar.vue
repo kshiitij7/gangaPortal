@@ -46,6 +46,18 @@
                         </v-tooltip>
                     </v-list-item-title>
                 </v-list-item>
+                <v-divider :thickness="2" color="white"></v-divider>
+                <!-- Elevation Profile Button -->
+                <v-list-item @click="openLeftDrawer('elevationProfile')" class="cursor-pointer">
+                    <v-list-item-title>
+                        <v-tooltip location="right">
+                            <template v-slot:activator="{ props: tooltip }">
+                                <v-icon style="color: wheat;" v-bind="tooltip">mdi-chart-areaspline</v-icon>
+                            </template>
+                            <span>Elevation Profile</span>
+                        </v-tooltip>
+                    </v-list-item-title>
+                </v-list-item>
             </v-list>
         </v-navigation-drawer>
 
@@ -60,7 +72,9 @@
                 <v-divider :thickness="2" color="black"></v-divider>
                     <v-expansion-panels>
                         <v-expansion-panel elevation="0">
-                            <v-expansion-panel-title>Administrative Boundaries</v-expansion-panel-title>
+                            <v-expansion-panel-title style="font-family: 'Poppins', sans-serif; font-weight:500; text-align: center; font-size:15px">
+                                Administrative Boundaries
+                            </v-expansion-panel-title>
                             <v-expansion-panel-text>
                                 <!-- Boundary Layer Checkboxes -->
                                 <v-list-item v-for="(adminLayer, index) in adminLayers" :key="index">
@@ -71,7 +85,7 @@
                             </v-expansion-panel-text>
                         </v-expansion-panel>
                         <v-expansion-panel elevation="0">
-                            <v-expansion-panel-title>
+                            <v-expansion-panel-title style="font-family: 'Poppins', sans-serif; font-weight:500; text-align: center; font-size:15px">
                                 Project Boundaries
                             </v-expansion-panel-title>
                             <v-expansion-panel-text>
@@ -112,6 +126,10 @@
             <!-- Compare Tool Content -->
             <div v-else-if="activeLeftTab === 'compare'">
                 <v-card elevation="0">
+                    <v-card-title>
+                        <div class="text-h5" style="font-family: 'Poppins', sans-serif; font-weight:500; text-align: center;">Comparision Tool</div>
+                    </v-card-title>
+                    <v-divider :thickness="2" color="black"></v-divider>
                 <v-card-text>
                     <v-title>
                         <div class="text-h8 font-weight-bold">Left Side</div>
@@ -125,8 +143,19 @@
                     <div v-if="showError" style="font-size: 15px; color: red; margin-top: 20px;">Please Select Different Layers.</div>
                 </v-card-text>
             </v-card>
+                <v-divider :thickness="3"></v-divider> 
+            </div>
+            <div v-else-if="activeLeftTab === 'elevationProfile'">
+                <v-card elevation="0">
+                    <v-card-title>
+                        <div class="text-h5" style="font-family: 'Poppins', sans-serif; font-weight:500; text-align: center;">Elevation Profile</div>
+                    </v-card-title>
+                    <v-divider :thickness="2" color="black"></v-divider>
+                    <v-card-text>
+                        <v-select v-model="elevationProfile" :items="elevationProfileLayers" label="Please Select an Option" required></v-select>
+                    </v-card-text>
+                </v-card>
                 <v-divider :thickness="3"></v-divider>
-             
             </div>
         </v-navigation-drawer>
     </v-main>

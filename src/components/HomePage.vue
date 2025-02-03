@@ -48,7 +48,7 @@
     position: absolute;
     width: 100%;
     top: 78%;
-    left: 90%;
+    left: 95%;
     transform: translate(-50%, -50%);
   }
   .overlay-text {
