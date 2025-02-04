@@ -8,14 +8,14 @@
        
       <!-- ISRO Logo -->
       <v-img ref="isro" :src="isro" contain max-width="60" max-height="60" style="margin-right:30px" />
-  
+   <v-spacer></v-spacer>
       <!-- Header Text -->
       <div ref="headerText" class="header-text">
         <h3>भारतीय अंतरिक्ष अनुसंधान संगठन, अंतरिक्ष विभाग</h3>
         <h3>Indian Space Research Organisation, Department of Space</h3>
         <h3>भारत सरकार / Government of India</h3>
       </div>
-  
+   <v-spacer></v-spacer>
       <!-- IIRS Logo -->
       <v-img ref="iirs" :src="iirs" contain max-width="60" max-height="60" style="margin-left:30px" />
   
