@@ -1,5 +1,6 @@
 <template>
     <v-app-bar app color="rgb(2, 42, 56)" class="home-page-header" height="80" elevation="2">
+         <v-spacer></v-spacer>
       <!-- Left Logo -->
       <v-img ref="indialogo" :src="indialogo" contain max-width="80" max-height="70" />
 
@@ -22,6 +23,7 @@
   
       <!-- NMCG Logo -->
       <v-img ref="nmcg" :src="nmcg" contain max-width="80" max-height="60" style="margin-right:5px" />
+         <v-spacer></v-spacer>
     </v-app-bar>
   </template>
   
