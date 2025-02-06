@@ -1,61 +1,53 @@
 <template>
-<div class="GangaBasin">
-    <v-main>
+    <div class="GangaBasin">
+      <v-main>
+        <Globe3D style="height: 85vh;"/>
         <LeftSideBar />
-        <div style="height: 85vh;">
-            <MapComponent  :center="[82.0662, 26.2648]" :zoom="6.5" />
+        <div :class="{ showMap: showMap }" class="map-container"
+        >
+        <MapComponent  :center="[82.0662, 26.2648]" :zoom="6.5" />
         </div>
         <RightSideBar />
-    </v-main>
-</div>
-</template>
-
-<script>
-import MapComponent from '@/components/MapComponent.vue';
-import RightSideBar from '@/Layouts/RightSideBar.vue';
-import LeftSideBar from '@/Layouts/LeftSideBar.vue';
-import TileLayer from 'ol/layer/Tile';
-import {get as getProjection} from 'ol/proj';
-import {TileWMS} from 'ol/source';
-
-export default {
+      </v-main>
+    </div>
+  </template>
+  
+  <script>
+  import MapComponent from '@/components/MapComponent.vue';
+  import Globe3D from '@/Layouts/Globe3D.vue';
+  import LeftSideBar from '@/Layouts/LeftSideBar.vue';
+  import RightSideBar from '@/Layouts/RightSideBar.vue';
+  
+  export default {
     name: 'GangaBasin',
     components: {
-        MapComponent,
-        RightSideBar,
-        LeftSideBar,
+      MapComponent,
+      RightSideBar,
+      LeftSideBar,
+      Globe3D,
     },
     data() {
-        return {
-           mapLayers: [],   
-        };
+      return {
+        showMap: false, // Initially hidden
+      };
     },
-
     mounted() {
-        const basinBoundary = new TileLayer({
-            title: 'Ganga Basin',
-            type: 'overlay',
-            source: new TileWMS({
-                url: 'http://192.168.17.37:8080/geoserver/Geo-Ganga/wms?',
-                params: {
-                    'LAYERS': 'Ganga_Basin_v4',
-                    'TILED': true,
-                    'VERSION': '1.1.1',
-                },
-                serverType: 'geoserver',
-                tileGrid: new TileWMS().getTileGridForProjection(getProjection('EPSG:4326')),
-            }),
-            visible: true,
-        });
-        this.mapLayers.push(basinBoundary);
-
+      setTimeout(() => {
+        this.showMap = true;
+         // Make the map visible
+      }, 2500);
     },
-
-};
-</script>
-
-<style>
-.GangaBasin {
-    overflow: hidden;
-}
-</style>
+  };
+  </script>
+  
+  <style scoped>
+  .map-container {
+    height: 85vh;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .showMap {
+    opacity: 1;
+  }
+  </style>
+  
