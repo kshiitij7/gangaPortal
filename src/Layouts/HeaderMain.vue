@@ -7,13 +7,14 @@
        
       <!-- ISRO Logo -->
       <v-img ref="isro" :src="isro" contain max-width="60" max-height="60" style="margin-right:30px" />
-  
+      <v-spacer></v-spacer>
       <!-- Header Text -->
       <div ref="headerText" class="header-text">
-        <h3 style="font-size: 35px; letter-spacing: 3px;">GEO - GANGA</h3>
-        <h3 style="font-size: 20px;">Spaced Based Mapping & Monitoring of River Ganga</h3>
+        <h2>GEO - GANGA / जियो गंगा</h2>
+        <h3 style="letter-spacing: 1px;">Space Based Mapping & Monitoring of River Ganga</h3>
+        <h3>गंगा नदी का स्थान आधारित मानचित्रण एवं निगरानी</h3>
       </div>
-  
+      <v-spacer></v-spacer>
       <!-- IIRS Logo -->
       <v-img ref="iirs" :src="iirs" contain max-width="60" max-height="60" style="margin-left:30px" />
   
