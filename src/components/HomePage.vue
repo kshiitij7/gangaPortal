@@ -2,12 +2,12 @@
   <v-main>
     <div class="image-container">
       <v-img :src="homeImage" class="image" />
-  
-      <AboutCards class="overlay-card"/>
       <div class="overlay-text animate-text">
         Geo-Ganga
       </div>
+      <AboutCards/>
     </div>
+    
   </v-main>
     
       <FooterHome />
@@ -44,17 +44,10 @@
       transform: translate(-50%, -50%);
     }
   }
-  .overlay-card {
-    position: absolute;
-    width: 100%;
-    top: 78%;
-    left: 95%;
-    transform: translate(-50%, -50%);
-  }
   .overlay-text {
       width: 100%;
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 70%;
     transform: translate(-50%, -50%);
     font-size: 130px;
