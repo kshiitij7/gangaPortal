@@ -27,13 +27,20 @@
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
   
-  :deep(.ol-swipe button::after) {
-    content: "↔"; 
-    position: absolute;
-    font-size: 35px;
-    color: black;   
-    bottom: 15px;
-  }
+:deep(.ol-swipe button)::before {
+  content: "←"; /* Left arrow */
+  font-size: 18px;
+  color: black;
+  position: absolute;
+}
+
+:deep(.ol-swipe button)::after {
+  content: "→"; /* Right arrow */
+  font-size: 18px;
+  color: black;
+  position: absolute;
+}
+
   
   :deep(.ol-swipe:before) {
     content: "";
