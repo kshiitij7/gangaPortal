@@ -1,11 +1,11 @@
 <template>
-<v-app-bar app color="white" dark class="button-bar" height="60" elevation="2">
+<v-app-bar app dark class="button-bar" height="60" elevation="2">
     <v-spacer></v-spacer>
     <div v-for="tab in tabs" :key="tab.route">
-        <router-link :to="tab.route">
+        <router-link v-if="tab.route !== 'about'" :to="tab.route">
             <v-btn :class="{'active': isActive(tab.route)}">
                 <v-icon :icon="tab.icon" size="x-large" style="color: rgb(2, 42, 56);"></v-icon>
-                <div style="color: rgb(2, 42, 56); font-family: 'Poppins', sans-serif; font-weight: 500;">{{ tab.name }}</div>
+                <div style="color: rgb(2, 42, 56); font-size: 15px; font-family: 'Poppins', sans-serif; font-weight:bold;">{{ tab.name }}</div>
             </v-btn>
         </router-link>
     </div>
@@ -13,6 +13,8 @@
 </v-app-bar>
 </template>
 
+  
+  
 <script>
 export default {
     name: 'NavBarMain',
@@ -44,27 +46,29 @@ export default {
                     icon: 'mdi-recycle'
                 },
                 {
-                    name: 'Gallery',
-                    route: '/gallery',
-                    icon: 'mdi-image-multiple'
+                    name: 'About',
+                    route: '/about',
+                    icon: 'mdi-information'
                 },
             ],
-            
-        }
+        };
     },
     methods: {
         isActive(route) {
             return this.$route.path === route;
         },
-        
-    },
+    }
 };
-</script> 
+</script>
 
 <style scoped>
 .active {
     height: 60px;
     background-color: rgba(2, 42, 56, 0.2);
-    font-size: 15px;
+    font-size: 17px;
+}
+
+.button-bar {
+    background: linear-gradient(45deg, #b3e5fc, #acdbf1, #95c8e0, #b8d9e9, #b3e5fc);
 }
 </style>
