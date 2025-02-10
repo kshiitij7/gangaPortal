@@ -12,7 +12,7 @@
                   <v-card-title class="card-info">
                     <div>
                       <h1><v-icon>{{ card.icon }}</v-icon> {{ card.title }}</h1>
-                      <p>{{ card.description }}</p>
+                      <p>Click to Read More</p>
                     </div>
                   </v-card-title>
                 </v-card>
@@ -40,33 +40,29 @@ export default {
         {
           icon: "mdi-leaf",
           title: "Ganga Basin",
-          description: "Click to Read More",
           details: "The Ganga Basin is a crucial water source for millions.",
-          image: "https://indiawris.gov.in/wiki/lib/exe/fetch.php?w=550&h=404&tok=717713&media=550px-ganga_basin.png",
+          image: require('@/assets/img/about_img.png'),
           flipped: false,
         },
         {
           icon: "mdi-water-check",
-          title: "Water Quality",
-          description: "Click to Read More",
+          title: "Water Quality",         
           details: "Water quality monitoring ensures clean and safe water.",
-          image: "https://images.unsplash.com/photo-1479659929431-4342107adfc1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+          image: require('@/assets/img/waterquality.png'),
           flipped: false,
         },
         {
           icon: "mdi-alert",
           title: "Flood Hazard",
-          description: "Click to Read More",
           details: "Flood hazards impact infrastructure and ecosystems.",
-          image: "https://images.unsplash.com/photo-1479644025832-60dabb8be2a1?dpr=2&auto=compress,format&fit=crop&w=1199&h=799&q=80&cs=tinysrgb&crop=",
+          image: "https://www.mdpi.com/sustainability/sustainability-14-01472/article_deploy/html/images/sustainability-14-01472-g001-550.jpg",
           flipped: false,
         },
         {
           icon: "mdi-recycle",
           title: "Solid Waste",
-          description: "Click to Read More",
           details: "Proper waste management reduces environmental pollution.",
-          image: "https://images.unsplash.com/photo-1479621051492-5a6f9bd9e51a?dpr=2&auto=compress,format&fit=crop&w=1199&h=811&q=80&cs=tinysrgb&crop=",
+          image: "https://www.researchgate.net/publication/338333116/figure/fig1/AS:961353997103113@1606216062796/Map-of-the-Ganga-River-Basin-showing-land-use-and-sampling-locations-for-the-collection.png",
           flipped: false,
         },
       ],
@@ -91,8 +87,8 @@ export default {
 
 .card-wrapper {
   perspective: 1000px;
-  width: 100%;
-  height: 320px;
+  width: 80%;
+  height: 350px;
   cursor: pointer;
 }
 
@@ -181,14 +177,10 @@ export default {
   color: white;
   padding: 20px;
 }
-
 .card-back-info p {
-  font-size: 16px;
+  font-size: 14px;
   color: #ddd;
-  margin-top: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-bottom: 5px;
+  margin: 5px;
   font-family: "Poppins", sans-serif;
   text-align: justify;
 }
