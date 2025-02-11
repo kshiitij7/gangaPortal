@@ -62,7 +62,7 @@
   
       const animateGlobe = () => {
         if (!scene || !camera || !renderer || !globe) return
-        globe.rotation.y -= 0.027
+        globe.rotation.y -= 0.8
         clouds.rotation.y += 0.0017
         renderer.render(scene, camera)
         animationFrameId = requestAnimationFrame(animateGlobe)
